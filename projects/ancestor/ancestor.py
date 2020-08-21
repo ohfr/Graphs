@@ -12,7 +12,7 @@ def get_neighbors(node, graph):
     if node in graph:
         return graph[node]
     else:
-        return 0
+        return -1
 
 
 def earliest_ancestor(ancestors, starting_node):
@@ -31,7 +31,7 @@ def earliest_ancestor(ancestors, starting_node):
         if cur not in visited:
             visited.add(cur)
 
-        if get_neighbors(cur, graph) != 0:
+        if get_neighbors(cur, graph) != -1:
             unsortedNeighbors = get_neighbors(cur, graph)
             sortedNeighbors = sorted(unsortedNeighbors)
             for v in sortedNeighbors:
